@@ -98,6 +98,10 @@ ZSHRC="$HOME/.zshrc"
 CUSTOM_CONTENT="
 # Go PATH configuration added by bootstrap script
 export PATH=\"\$PATH:\$(go env GOBIN):\$(go env GOPATH)/bin\"
+
+export NVM_DIR=\"\$HOME/.nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\" # This loads nvm
+[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\" # This loads nvm bash_completions
 "
 
 if ! grep -q "$CUSTOM_CONTENT" "$ZSHRC"; then
@@ -106,6 +110,21 @@ if ! grep -q "$CUSTOM_CONTENT" "$ZSHRC"; then
 else
   print_color "Go PATH configuration already exists in .zshrc. Skipping..." "$YELLOW"
 fi
+
+# Configure nvm
+print_color "Installing nvim..." "$YELLOW"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+# Source NVM and install Node.js in a subshell
+print_color "Installing latest Node.js version..." "$YELLOW"
+(
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  nvm install node # This installs the latest version of Node.js
+  nvm use node # Use the installed version
+  node --version # Print the installed Node.js version
+  node --version # Print the installed npm version
+)
 
 # Install AUR helper (paru)
 if ! command_exists paru; then
@@ -123,7 +142,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "google-chrome"
-  "railwayappp-cli"
+  "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
 )
