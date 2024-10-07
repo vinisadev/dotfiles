@@ -56,6 +56,7 @@ fi
 # Install essential packages
 PACKAGES=(
   "discord"
+  "libreoffice-still"
   "stow"
 )
 
