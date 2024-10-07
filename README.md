@@ -33,6 +33,7 @@ The script follows a very strict path in setting up the system, getting it ready
 
 ### Arch Linux Core Repository
 
+- [ ] DBeaver
 - [ ] Discord
 - [ ] Docker
 - [ ] Docker Compose
