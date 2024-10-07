@@ -60,6 +60,8 @@ fi
 # Install essential packages
 PACKAGES=(
   "discord"
+  "docker"
+  "docker-compose"
   "gnome-disk-utility"
   "go"
   "libreoffice-still"
@@ -75,6 +77,30 @@ done
 # Install Rust Stable Channel
 print_color "Installing Rust Stable Toolchain..." "$YELLOW"
 rustup install stable
+
+# Docker configuration in a subshell
+(
+  print_color "Configuring Docker..." "$YELLOW"
+
+  # Check if Docker is installed
+  if command_exists docker; then
+    # Post install configuration for Docker
+    sudo usermod -aG docker $USER
+
+    # Enable Docker service
+    print_color "Enabling Docker service..." "$YELLOW"
+    sudo systemctl enable docker
+
+    # Start Docker service
+    print_color "Starting Docker service..." "$YELLOW"
+    sudo systemctl start docker
+
+    print_color "Docker configuration completed." "$GREEN"
+    print_color "Please log out and log back in for Docker group changes to take effect." "$YELLOW"
+  else
+    print_color "Docker is not installed. Skipping Docker configuration." "$RED"
+  fi
+)
 
 # Use GNU Stow to symlink dotfiles
 print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
