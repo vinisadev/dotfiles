@@ -4,6 +4,8 @@ My personal Arch Linux configurations. These will not work unless you are on Arc
 
 To set your system up using these dotfiles, run the following command:
 
+#### **BE SURE TO AUDIT THE SCRIPT BEFORE RUNNING. NEVER RUN UNKNOWN SCRIPTS ON YOUR COMPUTER**
+
 ```sh
 curl -o- https://raw.githubusercontent.com/vinisadev/dotfiles/main/bootstrap.sh | bash
 ```
