@@ -108,6 +108,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "google-chrome"
+  "railwayappp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
 )
