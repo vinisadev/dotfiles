@@ -41,6 +41,10 @@ sudo pacman -Syu --noconfirm
 # Install git if not already installed
 install_package "git"
 
+# Set default git branch to master
+print_color "Setting default git branch to master..." "$YELLOW"
+git config --global init.defaultBranch master
+
 # Clone dotfiles repository
 DOTFILES_REPO="https://github.com/vinisadev/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
@@ -56,13 +60,19 @@ fi
 # Install essential packages
 PACKAGES=(
   "discord"
+  "go"
   "libreoffice-still"
+  "rustup"
   "stow"
 )
 
 for package in "${PACKAGES[@]}"; do
   install_package "$package"
 done
+
+# Install Rust Stable Channel
+print_color "Installing Rust Stable Toolchain..." "$YELLOW"
+rustup install stable
 
 # Use GNU Stow to symlink dotfiles
 print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
