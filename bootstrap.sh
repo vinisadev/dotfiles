@@ -67,7 +67,7 @@ print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
 cd "$DOTFILES_DIR"
 
 STOW_DIRS=(
-
+  "qtile"
 )
 
 for dir in "${STOW_DIRS[@]}"; do
