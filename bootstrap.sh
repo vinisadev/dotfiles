@@ -64,6 +64,7 @@ PACKAGES=(
   "docker-compose"
   "gnome-disk-utility"
   "go"
+  "lazygit"
   "libreoffice-still"
   "rustup"
   "steam"
