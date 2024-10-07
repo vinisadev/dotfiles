@@ -185,6 +185,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "google-chrome"
+  "insomnia"
   "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"

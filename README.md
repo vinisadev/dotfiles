@@ -54,6 +54,7 @@ The script follows a very strict path in setting up the system, getting it ready
 ### AUR Packages
 
 - [ ] Google Chrome
+- [ ] Insomnia
 - [ ] Railway CLI
 - [ ] Slack Desktop
 - [ ] Visual Studio Code
