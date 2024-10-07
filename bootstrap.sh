@@ -92,6 +92,21 @@ for dir in "${STOW_DIRS[@]}"; do
   fi
 done
 
+# Append new exports to .zshrc
+print_color "Appending custom content to .zshrc..." "$YELLOW"
+ZSHRC="$HOME/.zshrc"
+CUSTOM_CONTENT="
+# Go PATH configuration added by bootstrap script
+export PATH=\"\$PATH:\$(go env GOBIN):\$(go env GOPATH)/bin\"
+"
+
+if ! grep -q "$CUSTOM_CONTENT" "$ZSHRC"; then
+  echo "$CUSTOM_CONTENT" >> "$ZSHRC"
+  print_color "Go PATH configuration added to .zshrc" "$GREEN"
+else
+  print_color "Go PATH configuration already exists in .zshrc. Skipping..." "$YELLOW"
+fi
+
 # Install AUR helper (paru)
 if ! command_exists paru; then
   print_color "Installing paru AUR helper..." "$YELLOW"
