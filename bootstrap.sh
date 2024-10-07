@@ -55,6 +55,7 @@ fi
 
 # Install essential packages
 PACKAGES=(
+  "discord"
   "stow"
 )
 
