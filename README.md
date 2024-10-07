@@ -43,6 +43,7 @@ The script follows a very strict path in setting up the system, getting it ready
 - [ ] Godot
 - [ ] LazyGit
 - [ ] LibreOffice Still
+- [ ] Neovim
 - [ ] Rustup
 - [ ] Steam
 - [ ] GNU Stow
