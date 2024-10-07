@@ -60,6 +60,7 @@ fi
 # Install essential packages
 PACKAGES=(
   "discord"
+  "gnome-disk-utility"
   "go"
   "libreoffice-still"
   "rustup"
@@ -112,18 +113,30 @@ else
 fi
 
 # Configure nvm
-print_color "Installing nvim..." "$YELLOW"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+if [ ! -d "$HOME/.nvm" ]; then
+  print_color "Installing nvm..." "$YELLOW"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+else
+  print_color "NVM is already installed. Skipping installation." "$GREEN"
+fi
 
 # Source NVM and install Node.js in a subshell
-print_color "Installing latest Node.js version..." "$YELLOW"
+print_color "Configuring Node.js..." "$YELLOW"
 (
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-  nvm install node # This installs the latest version of Node.js
-  nvm use node # Use the installed version
-  node --version # Print the installed Node.js version
-  node --version # Print the installed npm version
+  
+  if ! command_exists node; then
+    print_color "Installing latest Node.js version..." "$YELLOW"
+    nvm install node # This installs the latest version of Node.js
+    nvm use node # Use the installed version
+  else
+    print_color "Node.js is already installed. Checking for updates..." "$YELLOW"
+    nvm install node --reinstall-packages-from=node # This updates Node.js to the lastest version
+  fi
+
+  print_color "Node.js version: $(node --version)" "$GREEN" # Print the installed Node.js version
+  print_color "NPM version: $(npm --version)" "$GREEN" # Print the installed npm version
 )
 
 # Install AUR helper (paru)
