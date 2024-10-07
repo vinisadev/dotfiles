@@ -95,7 +95,8 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
-
+  "google-chrome"
+  "visual-studio-code-bin"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
