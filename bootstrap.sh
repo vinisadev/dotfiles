@@ -63,6 +63,7 @@ PACKAGES=(
   "go"
   "libreoffice-still"
   "rustup"
+  "steam"
   "stow"
 )
 
