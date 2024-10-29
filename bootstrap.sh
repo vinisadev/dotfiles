@@ -52,5 +52,17 @@ else
   git config --global user.email "vinfehring@gmail.com"
 fi
 
+# Clone dotfiles repository
+DOTFILES_REPO="https://github.com/vinisadev/dotfiles.git"
+DOTFILES_DIR="$HOME/dotfiles"
+
+if [ ! -d "$DOTFILES_DIR" ]; then
+  print_color "Cloning dotfiles repository..." "$YELLOW"
+  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+else
+  print_color "Dotfiles directory already exists. Pulling latest changes..." "$YELLOW"
+  cd "$DOTFILES_DIR" && git pull
+fi
+
 print_color "Bootstrap process completed successfully!" "$GREEN"
 print_color "Please log out and log back in for all changes to take effect." "$YELLOW"
