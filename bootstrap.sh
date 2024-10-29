@@ -74,5 +74,31 @@ for package in "${PACKAGES[@]}"; do
   install_package "$package"
 done
 
+# Install AUR helper (yay)
+if ! command_exists yay; then
+  print_color "Installing yay AUR helper..." "$YELLOW"
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si --noconfirm
+  cd ..
+  rm -rf yay
+else
+  print_color "yay is already installed." "$GREEN"
+fi
+
+# Install AUR packages
+AUR_PACKAGES=(
+  "visual-studio-code-bin"
+)
+
+for package in "${AUR_PACKAGES[@]}"; do
+  if ! yay -Qi "$package" >/dev/null 2>&1; then
+    print_color "Installing $package from AUR..." "$YELLOW"
+    yay -S --noconfirm "$package"
+  else
+    print_color "$package is already installed." "$GREEN"
+  fi
+done
+
 print_color "Bootstrap process completed successfully!" "$GREEN"
 print_color "Please log out and log back in for all changes to take effect." "$YELLOW"
