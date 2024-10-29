@@ -1,27 +1,56 @@
 # Arch Linux Bootstrap Script
 
-This repository contains a bootstrap script for setting up a new Arch Linux installation with my preferred configurations and tools. The script automates the installation of packages, configuration of development tools, and setup of dotfiles.
+This repository contains a modular bootstrap system for setting up a new Arch Linux installation with my preferred configurations and tools. The script architecture is divided into individual components for better maintainability and flexibility.
 
 ## ⚠️ Important Security Notice
 
 Before running this or any bootstrap script, you should:
 
-1. **Read and understand the script**: Take time to review the code to understand what changes it will make to your system
-2. **Verify the source**: Ensure you trust the source of the script
-3. **Audit the packages**: Review the list of packages that will be installed
-4. **Backup your data**: While this script shouldn't affect existing data, it's always good practice to backup before major system changes
+1. **Read and understand the scripts**: Take time to review all scripts in the `scripts/` directory to understand what changes they will make to your system
+2. **Verify the source**: Ensure you trust the source of all scripts
+3. **Audit the packages**: Review the list of packages that will be installed in `core_packages.sh` and `aur_setup.sh`
+4. **Backup your data**: While these scripts shouldn't affect existing data, it's always good practice to backup before major system changes
 
-## 🔍 What the Script Does
+## 🗂️ Directory Structure
 
-The script performs the following operations:
+```
+bootstrap/
+├── main.sh                 # Main orchestration script
+└── scripts/
+    ├── utils.sh           # Utility functions and common variables
+    ├── system_update.sh   # System update functionality
+    ├── git_config.sh      # Git configuration
+    ├── core_packages.sh   # Core package installation
+    ├── dotfiles.sh        # Dotfiles management
+    ├── rust_setup.sh      # Rust installation and configuration
+    ├── node_setup.sh      # Node.js and NVM setup
+    ├── docker_setup.sh    # Docker configuration
+    ├── aur_setup.sh       # AUR helper and AUR package installation
+    └── shell_setup.sh     # Shell configuration
+```
 
-### System Updates and Base Configuration
+## 🔍 What Each Script Does
+
+### main.sh
+- Orchestrates the execution of all other scripts
+- Maintains execution order
+- Provides timing information
+- Handles errors and script validation
+
+### utils.sh
+- Contains common utility functions
+- Defines color variables for output
+- Provides package installation helpers
+
+### system_update.sh
 - Updates the system packages using pacman
-- Sets the default git branch to master
-- Clones the dotfiles repository
 
-### Package Installation
-#### Core Packages (via pacman)
+### git_config.sh
+- Sets the default git branch to master
+- Configures basic git settings
+
+### core_packages.sh
+Installs core packages via pacman:
 - dbeaver
 - discord
 - docker
@@ -36,7 +65,30 @@ The script performs the following operations:
 - steam
 - stow
 
-#### AUR Packages (via paru)
+### dotfiles.sh
+- Clones the dotfiles repository
+- Uses GNU Stow to manage dotfiles
+- Handles backup of existing configurations
+- Currently manages:
+  - qtile
+  - nvim
+
+### rust_setup.sh
+- Installs Rust stable toolchain
+- Configures Rust environment
+
+### node_setup.sh
+- Installs NVM (Node Version Manager)
+- Installs latest Node.js
+- Configures Node.js environment
+
+### docker_setup.sh
+- Configures Docker permissions
+- Sets up Docker service
+- Adds user to Docker group
+
+### aur_setup.sh
+Installs and configures AUR helper (paru) and AUR packages:
 - doppler-cli-bin
 - google-chrome
 - railwayapp-cli
@@ -45,20 +97,13 @@ The script performs the following operations:
 - yaak-bin
 - zen-browser-avx2-bin
 
-### Development Environment Setup
-- Installs and configures Rust (stable toolchain)
-- Sets up Go environment and PATH
-- Installs NVM (Node Version Manager) and the latest Node.js
-- Configures Docker user permissions and services
-
-### Configuration Management
-- Uses GNU Stow to manage dotfiles
-- Configures zsh as the default shell
-- Sets up various PATH and environment variables
+### shell_setup.sh
+- Configures zsh as default shell
+- Sets up PATH and environment variables
 
 ## 📋 Prerequisites
 
-Before running this script, ensure you have:
+Before running these scripts, ensure you have:
 1. A fresh Arch Linux installation
 2. An internet connection
 3. Sudo privileges
@@ -66,55 +111,73 @@ Before running this script, ensure you have:
 
 ## 🚀 Usage
 
-1. **Download the Script**
+### Running the Complete Bootstrap
+
+1. **Clone the Repository**
    ```bash
-   curl -O https://raw.githubusercontent.com/vinfehring/dotfiles/main/bootstrap.sh
+   git clone https://github.com/vinisadev/dotfiles.git
+   cd dotfiles/bootstrap
    ```
 
-2. **Make it Executable**
+2. **Make Scripts Executable**
    ```bash
-   chmod +x bootstrap.sh
+   chmod +x main.sh
+   chmod +x scripts/*.sh
    ```
 
-3. **Review the Script (IMPORTANT)**
+3. **Review the Scripts (IMPORTANT)**
    ```bash
-   less bootstrap.sh
+   # Review main script
+   less main.sh
+   # Review individual scripts
+   less scripts/*.sh
    ```
 
-4. **Run the Script**
+4. **Run the Main Script**
    ```bash
-   ./bootstrap.sh
+   ./main.sh
    ```
 
-5. **After Script Completion**
-   - Log out and log back in for all changes to take effect
-   - If prompted, manually change your shell to zsh:
-     ```bash
-     chsh -s /usr/bin/zsh
-     ```
+### Running Individual Components
+
+You can run individual scripts if you only need specific functionality:
+
+```bash
+# First source the utilities
+source ./scripts/utils.sh
+
+# Then run any individual script
+./scripts/system_update.sh
+./scripts/docker_setup.sh
+# etc.
+```
 
 ## ⚙️ Customization
 
-To customize this script for your own use:
+To customize these scripts for your own use:
 
-1. Fork this repository
-2. Modify the `DOTFILES_REPO` variable to point to your dotfiles repository
-3. Update the package lists in `PACKAGES` and `AUR_PACKAGES` arrays
-4. Adjust the Stow directories in `STOW_DIRS` array to match your dotfiles structure
-5. Modify any environment variables or configurations to match your preferences
-6. Modify git configuration values on lines 49, 50, 54, 55
+1. **Fork this repository**
 
-## 📁 Directory Structure
+2. **Modify Package Lists**
+   - Edit `scripts/core_packages.sh` for pacman packages
+   - Edit `scripts/aur_setup.sh` for AUR packages
 
-For the script to work correctly, your dotfiles repository should follow this structure:
+3. **Update Dotfiles Configuration**
+   - Edit `scripts/dotfiles.sh` to point to your dotfiles repository
+   - Modify the `STOW_DIRS` array to match your dotfiles structure
+
+4. **Adjust Script Order**
+   - Edit the `SCRIPTS` array in `main.sh` to change execution order
+
+## 📁 Required Dotfiles Structure
+
+For the dotfiles management to work correctly, your dotfiles repository should follow this structure:
 ```
 dotfiles/
-├── nvim/            # Example configuration directory
+├── nvim/
 │   └── .config/
 │       └── nvim/
-│           └── init.lua
-├── zsh/
-│   └── .zshrc
+│           └── init.vim
 └── other_configs/
 ```
 
@@ -130,22 +193,22 @@ The script includes timing information and will display the total execution time
 
 Common issues and solutions:
 
-1. **Shell Change Failed**
-   - The script will provide instructions to manually change your shell to zsh
-   - Take your time when entering the password for `chsh`
+1. **Scripts Not Found**
+   - Ensure you're running `main.sh` from the bootstrap directory
+   - Verify all scripts are executable
+   - Check that the directory structure matches the expected layout
 
-2. **Package Installation Errors**
-   - Ensure you have a stable internet connection
-   - Try running `sudo pacman -Syu` manually first
-   - Check if the package names are still valid
+2. **Stow Conflicts**
+   - Existing configurations will be automatically backed up
+   - Check the backup directory if you need to restore previous configs
 
-3. **Docker Configuration**
-   - If Docker group membership isn't working, log out and back in
-   - Verify Docker service status with `systemctl status docker`
+3. **Permission Issues**
+   - Ensure you have sudo privileges
+   - Check that all scripts are executable
+   - Run `chmod +x main.sh scripts/*.sh` if needed
 
 ## 🤝 Contributing
 
-Feel free to:
 1. Fork this repository
 2. Create a feature branch
 3. Submit a Pull Request with your improvements
@@ -156,11 +219,11 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🔒 Security
 
-If you discover any security-related issues, please email [your-email@example.com] instead of using the issue tracker.
+If you discover any security-related issues, please email vinfehring@gmail.com instead of using the issue tracker.
 
 ## 📝 Notes
 
-- This script is specifically designed for Arch Linux and may not work on other distributions
-- Some manual configuration may still be required after running the script
-- Always check the script for updates before running it on a new system
-- Consider creating a backup or snapshot before running the script
+- These scripts are specifically designed for Arch Linux
+- Some manual configuration may still be required after running the scripts
+- Always check the scripts for updates before running them on a new system
+- Consider creating a backup or snapshot before running any scripts
