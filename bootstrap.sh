@@ -72,6 +72,7 @@ PACKAGES=(
   "discord"
   "docker"
   "docker-compose"
+  "gnome-disk-utility"
   "godot"
   "go"
   "libreoffice-still"
