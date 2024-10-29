@@ -208,6 +208,7 @@ AUR_PACKAGES=(
   "slack-desktop"
   "railwayapp-cli"
   "visual-studio-code-bin"
+  "yaak-bin"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
