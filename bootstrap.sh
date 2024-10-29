@@ -84,8 +84,12 @@ for package in "${PACKAGES[@]}"; do
 done
 
 # Install steam with user intervention for drivers selection
-print_color "Installing steam..." "$YELLOW"
-sudo pacman -S steam
+if ! command_exists steam; then
+  print_color "Installing steam..." "$YELLOW"
+  sudo pacman -S steam
+else
+  print_color "Steam is already installed..." "$GREEN"
+fi
 
 # Use GNU Stow to symlink dotfiles
 print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
