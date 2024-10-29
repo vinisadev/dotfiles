@@ -68,6 +68,7 @@ fi
 PACKAGES=(
   "discord"
   "godot"
+  "libreoffice-still"
   "neovim"
 )
 
