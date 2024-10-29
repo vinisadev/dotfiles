@@ -201,6 +201,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "google-chrome"
+  "slack-desktop"
   "visual-studio-code-bin"
 )
 
