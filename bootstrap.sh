@@ -100,6 +100,11 @@ ZSHRC="$HOME/.zshrc-personal"
 CUSTOM_CONTENT="
 # Go PATH configuration added by bootstrap script
 export PATH=\"\$PATH:\$(go env GOBIN):\$(go env GOPATH)/bin\"
+
+# NVM configuration added by bootstrap script
+export NVM_DIR=\"\$HOME/.nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\"  # This loads nvm
+[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\"  # This loads nvm bash_completion
 "
 
 print_color "Checking for .zshrc-personal in HOME..." "$YELLOW"
@@ -111,6 +116,21 @@ if ! grep -q "Go PATH configuration added by bootstrap script" "$ZSHRC"; then
 else
   print_color "Go PATH configuration already exists in .zshrc-personal. Skipping..." "$YELLOW"
 fi
+
+# Install NVM
+print_color "Installing NVM..." "$YELLOW"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Source NVM and install Node.js in a subshell
+print_color "Installing latest Node.js version..." "$YELLOW"
+(
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads NVM
+  nvm install node # This installs the latest version of Node.js
+  nvm use node # Use the installed version
+  node --version # Print the installed Node.js version
+  npm --version # Print the installed npm version
+)
 
 # Install AUR helper (paru)
 if ! command_exists paru; then
