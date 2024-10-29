@@ -76,16 +76,16 @@ for package in "${PACKAGES[@]}"; do
   install_package "$package"
 done
 
-# Install AUR helper (yay)
-if ! command_exists yay; then
-  print_color "Installing yay AUR helper..." "$YELLOW"
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
+# Install AUR helper (paru)
+if ! command_exists paru; then
+  print_color "Installing paru AUR helper..." "$YELLOW"
+  git clone https://aur.archlinux.org/paru.git
+  cd paru
   makepkg -si --noconfirm
   cd ..
-  rm -rf yay
+  rm -rf pary
 else
-  print_color "yay is already installed." "$GREEN"
+  print_color "paru is already installed." "$GREEN"
 fi
 
 # Install AUR packages
@@ -95,9 +95,9 @@ AUR_PACKAGES=(
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
-  if ! yay -Qi "$package" >/dev/null 2>&1; then
+  if ! paru -Qi "$package" >/dev/null 2>&1; then
     print_color "Installing $package from AUR..." "$YELLOW"
-    yay -S --noconfirm "$package"
+    paru -S --noconfirm "$package"
   else
     print_color "$package is already installed." "$GREEN"
   fi
