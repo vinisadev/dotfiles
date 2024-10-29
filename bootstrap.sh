@@ -72,6 +72,7 @@ PACKAGES=(
   "discord"
   "docker"
   "docker-compose"
+  "flameshot"
   "gnome-disk-utility"
   "godot"
   "go"
