@@ -203,6 +203,7 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
+  "doppler-cli-bin"
   "google-chrome"
   "slack-desktop"
   "railwayapp-cli"
