@@ -69,6 +69,7 @@ fi
 
 # Install essential packages
 PACKAGES=(
+  "dbeaver"
   "discord"
   "docker"
   "docker-compose"
