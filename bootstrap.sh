@@ -67,6 +67,7 @@ fi
 # Install essential packages
 PACKAGES=(
   "discord"
+  "godot"
   "neovim"
 )
 
