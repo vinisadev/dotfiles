@@ -90,6 +90,7 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
+  "google-chrome"
   "visual-studio-code-bin"
 )
 
