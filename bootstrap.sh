@@ -70,10 +70,27 @@ PACKAGES=(
   "godot"
   "libreoffice-still"
   "neovim"
+  "stow"
 )
 
 for package in "${PACKAGES[@]}"; do
   install_package "$package"
+done
+
+# Use GNU Stow to symlink dotfiles
+print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
+cd "$DOTFILES_DIR"
+
+STOW_DIRS=(
+)
+
+for dir in "${STOW_DIRS[@]}"; do
+  if [ -d "$dir" ]; then
+    print_color "Stowing $dir..." "$GREEN"
+    stow -v -R -t "$HOME" "$dir"
+  else
+    print_color "Directory $dir not found in dotfiles." "$RED"
+  fi
 done
 
 # Install AUR helper (paru)
