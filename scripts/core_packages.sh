@@ -13,6 +13,7 @@ PACKAGES=(
   "neovim"
   "rustup"
   "stow"
+  "thunderbird"
 )
 
 for package in "${PACKAGES[@]}"; do
