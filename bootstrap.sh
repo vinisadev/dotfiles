@@ -83,6 +83,10 @@ for package in "${PACKAGES[@]}"; do
   install_package "$package"
 done
 
+# Install steam with user intervention for drivers selection
+print_color "Installing steam..." "$YELLOW"
+sudo pacman -S steam
+
 # Use GNU Stow to symlink dotfiles
 print_color "Using GNU Stow to symlink dotfiles..." "$YELLOW"
 cd "$DOTFILES_DIR"
