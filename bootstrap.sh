@@ -68,6 +68,7 @@ fi
 PACKAGES=(
   "discord"
   "godot"
+  "go"
   "libreoffice-still"
   "neovim"
   "stow"
@@ -92,6 +93,24 @@ for dir in "${STOW_DIRS[@]}"; do
     print_color "Directory $dir not found in dotfiles." "$RED"
   fi
 done
+
+# Append custom content to .zshrc-personal
+print_color "Appending Go PATH to .zshrc..." "$YELLOW"
+ZSHRC="$HOME/.zshrc-personal"
+CUSTOM_CONTENT="
+# Go PATH configuration added by bootstrap script
+export PATH=\"\$PATH:\$(go env GOBIN):\$(go env GOPATH)/bin\"
+"
+
+print_color "Checking for .zshrc-personal in HOME..." "$YELLOW"
+[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+
+if ! grep -q "Go PATH configuration added by bootstrap script" "$ZSHRC"; then
+  echo "$CUSTOM_CONTENT" >> "$ZSHRC"
+  print_color "Go PATH configuration added to .zshrc" "$GREEN"
+else
+  print_color "Go PATH configuration already exists in .zshrc-personal. Skipping..." "$YELLOW"
+fi
 
 # Install AUR helper (paru)
 if ! command_exists paru; then
