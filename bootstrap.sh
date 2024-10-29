@@ -66,6 +66,7 @@ fi
 
 # Install essential packages
 PACKAGES=(
+  "discord"
   "neovim"
 )
 
