@@ -209,6 +209,7 @@ AUR_PACKAGES=(
   "railwayapp-cli"
   "visual-studio-code-bin"
   "yaak-bin"
+  "zen-browser-avx2-bin"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
