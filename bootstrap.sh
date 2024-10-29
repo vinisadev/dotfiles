@@ -206,8 +206,8 @@ fi
 AUR_PACKAGES=(
   "doppler-cli-bin"
   "google-chrome"
-  "slack-desktop"
   "railwayapp-cli"
+  "slack-desktop"
   "visual-studio-code-bin"
   "yaak-bin"
   "zen-browser-avx2-bin"
