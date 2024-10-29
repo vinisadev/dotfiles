@@ -205,6 +205,7 @@ fi
 AUR_PACKAGES=(
   "google-chrome"
   "slack-desktop"
+  "railwayapp-cli"
   "visual-studio-code-bin"
 )
 
