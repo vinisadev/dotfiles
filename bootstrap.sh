@@ -76,6 +76,7 @@ PACKAGES=(
   "go"
   "libreoffice-still"
   "neovim"
+  "rustup"
   "stow"
 )
 
@@ -106,6 +107,10 @@ for dir in "${STOW_DIRS[@]}"; do
     print_color "Directory $dir not found in dotfiles." "$RED"
   fi
 done
+
+# Install rust stable toolchain
+print_color "Installing rust stable toolchain..." "$YELLOW"
+rustup install stable
 
 # Append custom content to .zshrc-personal
 print_color "Appending Go PATH to .zshrc..." "$YELLOW"
