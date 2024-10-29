@@ -64,5 +64,14 @@ else
   cd "$DOTFILES_DIR" && git pull
 fi
 
+# Install essential packages
+PACKAGES=(
+  "neovim"
+)
+
+for package in "${PACKAGES[@]}"; do
+  install_package "$package"
+done
+
 print_color "Bootstrap process completed successfully!" "$GREEN"
 print_color "Please log out and log back in for all changes to take effect." "$YELLOW"
