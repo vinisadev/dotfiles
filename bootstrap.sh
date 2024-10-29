@@ -100,5 +100,11 @@ for package in "${AUR_PACKAGES[@]}"; do
   fi
 done
 
+# Set zsh as the default shell
+if [ "$SHELL" != "/bin/zsh" ]; then
+  print_color "Setting zsh as the default shell..." "$YELLOW"
+  chsh -s /bin/zsh
+fi
+
 print_color "Bootstrap process completed successfully!" "$GREEN"
 print_color "Please log out and log back in for all changes to take effect." "$YELLOW"
