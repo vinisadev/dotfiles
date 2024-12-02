@@ -62,6 +62,7 @@ Installs core packages via pacman:
 - lazygit
 - libreoffice-still
 - neovim
+- obsidian
 - rustup
 - steam
 - stow
