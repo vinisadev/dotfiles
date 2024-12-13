@@ -5,6 +5,7 @@ PACKAGES=(
   "dbeaver"
   "discord"
   "docker"
+  "docker-buildx"
   "docker-compose"
   "fastfetch"
   "flameshot"
