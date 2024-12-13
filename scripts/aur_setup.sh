@@ -22,6 +22,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "brother-hll2315dw"
+  "docker-desktop"
   "doppler-cli-bin"
   "google-chrome"
   "insomnia-bin"
