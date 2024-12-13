@@ -16,13 +16,13 @@ print_color "Installing latest Node.js version..." "$YELLOW"
 
   if ! command_exists node; then
     print_color "Installing latest Node.js version..." "$YELLOW"
-    nvm install node # This installs the latest version of Node.js
-    nvm use node # Use the installed version
+    nvm install 22.12.0 # This installs the latest version of Node.js
+    nvm use node        # Use the installed version
   else
     print_color "Node.js is already installed. Checking for updates..." "$YELLOW"
     nvm install node --reinstall-packages-from=node # This updates node.js to the latest version
   fi
 
   print_color "Node.js version: $(node --version)" "$GREEN" # Print the installed Node.js version
-  print_color "npm version: $(npm --version)" "$GREEN" # Print the installed npm version
+  print_color "npm version: $(npm --version)" "$GREEN"      # Print the installed npm version
 )
