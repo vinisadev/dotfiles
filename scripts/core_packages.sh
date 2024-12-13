@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+  "cmake"
   "dbeaver"
   "discord"
   "docker"
