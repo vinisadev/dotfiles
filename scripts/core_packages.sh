@@ -6,6 +6,7 @@ PACKAGES=(
   "discord"
   "docker"
   "docker-compose"
+  "fastfetch"
   "flameshot"
   "gnome-disk-utility"
   "godot"
