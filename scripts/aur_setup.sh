@@ -24,11 +24,10 @@ AUR_PACKAGES=(
   "brother-hll2315dw"
   "doppler-cli-bin"
   "google-chrome"
+  "insomnia-bin"
   "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
-  "yaak-bin"
-  "zen-browser-avx2-bin"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
