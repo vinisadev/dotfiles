@@ -14,6 +14,7 @@ PACKAGES=(
   "libreoffice-still"
   "neovim"
   "obsidian"
+  "onefetch"
   "rustup"
   "stow"
   "thunderbird"
