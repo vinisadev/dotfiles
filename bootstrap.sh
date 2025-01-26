@@ -6,7 +6,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPTS_DIR="$SCRIPT_DIR/scripts"
 
-# Record the start time
+# Record start time
 start_time=$(date +%s)
 
 # Source utility functions
@@ -24,10 +24,11 @@ print_color "Starting bootstrap process..." "$YELLOW"
 # Array of scripts to run in order
 SCRIPTS=(
   "system_update.sh"
+  "git_config.sh"
 )
 
 # Execute each script
-for script in "${SCRITS[@]}"; do
+for script in "${SCRIPTS[@]}"; do
   script_path="$SCRIPTS_DIR/$script"
 
   # Debug information
@@ -65,7 +66,7 @@ for script in "${SCRITS[@]}"; do
   fi
 done
 
-# Record the end time
+# Record end time
 end_time=$(date +%s)
 
 # Calculate duration
@@ -73,7 +74,7 @@ duration=$((end_time - start_time))
 
 # Convert duration to hours, minutes, and seconds
 hours=$((duration / 3600))
-minutes=$(( (duration % 3600) / 60))
+minutes=$(( (duration % 3600) / 60 ))
 seconds=$((duration % 60))
 
 print_color "Bootstrap process completed successfully!" "$GREEN"
