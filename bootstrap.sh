@@ -25,6 +25,7 @@ print_color "Starting bootstrap process..." "$YELLOW"
 SCRIPTS=(
   "system_update.sh"
   "git_config.sh"
+  "core_packages.sh"
 )
 
 # Execute each script
