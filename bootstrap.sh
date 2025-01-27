@@ -31,6 +31,7 @@ SCRIPTS=(
   "node_setup.sh"
   "docker_setup.sh"
   "aur_setup.sh"
+  "shell_setup.sh"
 )
 
 # Execute each script
