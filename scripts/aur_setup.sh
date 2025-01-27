@@ -22,6 +22,7 @@ fi
 # Install AUR packages
 AUR_PACKAGES=(
   "brother-hll2315dw"
+  "google-chrome"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
