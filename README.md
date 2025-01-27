@@ -17,10 +17,12 @@ Before running this or any bootstrap script, you should:
 dotfiles/
 ├── bootstrap.sh           # Main orchestration script
 └── scripts/
-    ├── core_packages.sh   # Core package installation
-    ├── git_config.sh      # Git configuration
-    ├── system_update.sh   # System update functionality
-    └── utils.sh           # Utility functions and common variables
+    ├── aur_setup.sh        # AUR helper and AUR package installation
+    ├── core_packages.sh    # Core package installation
+    ├── git_config.sh       # Git configuration
+    ├── steam_setup.sh      # Setup Steam for Gaming
+    ├── system_update.sh    # System update functionality
+    └── utils.sh            # Utility functions and common variables
 ```
 
 ## 🔍 What Each Script Does
