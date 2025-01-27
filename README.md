@@ -59,6 +59,7 @@ Installs core packages via pacman:
 - fastfetch
 - flameshot
 - gnome-disk-utility
+- gnucash
 - go
 - godot
 - lazygit
