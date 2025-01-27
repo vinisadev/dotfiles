@@ -13,6 +13,7 @@ PACKAGES=(
   "gnome-disk-utility"
   "go"
   "godot"
+  "lazygit"
   "rustup"
 )
 
