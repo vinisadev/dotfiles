@@ -21,6 +21,7 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
+  "appimagelauncher"
   "brother-hll2315dw"
   "google-chrome"
   "insomnia-bin"
@@ -38,3 +39,4 @@ for package in "${AUR_PACKAGES[@]}"; do
     print_color "$package is already installed." "$GREEN"
   fi
 done
+
