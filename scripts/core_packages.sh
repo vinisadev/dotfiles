@@ -14,6 +14,7 @@ PACKAGES=(
   "go"
   "godot"
   "lazygit"
+  "libreoffice-still"
   "rustup"
 )
 
