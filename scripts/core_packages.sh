@@ -2,6 +2,7 @@
 
 PACKAGES=(
   "discord"
+  "flameshot"
   "gnome-disk-utility"
 )
 
