@@ -16,6 +16,7 @@ PACKAGES=(
   "lazygit"
   "libreoffice-still"
   "neovim"
+  "obsidian"
   "rustup"
 )
 
