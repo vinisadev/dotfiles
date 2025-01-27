@@ -10,8 +10,9 @@ PACKAGES=(
   "ducker"
   "fastfetch"
   "flameshot"
-  "godot"
   "gnome-disk-utility"
+  "go"
+  "godot"
   "rustup"
 )
 
