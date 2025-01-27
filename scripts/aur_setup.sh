@@ -23,6 +23,7 @@ fi
 AUR_PACKAGES=(
   "brother-hll2315dw"
   "google-chrome"
+  "visual-studio-code-bin"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
