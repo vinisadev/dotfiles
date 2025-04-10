@@ -17,6 +17,7 @@ Before running this or any bootstrap script, you should:
 dotfiles/
 ├── bootstrap.sh           # Main orchestration script
 └── scripts/
+    ├── system_update.sh   # System update functionality
     └── utils.sh           # Utility functions and common variables
 ```
 
@@ -27,6 +28,9 @@ dotfiles/
 - Maintains execution order
 - Provides timing information
 - Handles errors and script validation
+
+### system_update.sh
+- Updates the system packages using pacman
 
 ### utils.sh
 - Contains common utility functions
@@ -69,6 +73,14 @@ cd dotfiles
 ```bash
   ./bootstrap.sh
 ```
+
+## ⏱️ Performance
+
+The script includes timing information and will display the total execution time upon completion. The duration can vary based on:
+- Your internet connection speed
+- System specifications
+- Number of packages being installed
+- AUR package compilation time
 
 ## 🤝 Contributing
 
