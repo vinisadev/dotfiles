@@ -17,6 +17,7 @@ Before running this or any bootstrap script, you should:
 dotfiles/
 ├── bootstrap.sh           # Main orchestration script
 └── scripts/
+    ├── git_config.sh      # Git configuration
     ├── system_update.sh   # System update functionality
     └── utils.sh           # Utility functions and common variables
 ```
@@ -28,6 +29,10 @@ dotfiles/
 - Maintains execution order
 - Provides timing information
 - Handles errors and script validation
+
+### git_config.sh
+- Sets the default git branch to master
+- Configures basic git settings
 
 ### system_update.sh
 - Updates the system packages using pacman
