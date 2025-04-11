@@ -21,7 +21,7 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
-
+    "brother-hll2315dw"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
