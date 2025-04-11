@@ -17,13 +17,17 @@ Before running this or any bootstrap script, you should:
 dotfiles/
 ├── bootstrap.sh           # Main orchestration script
 └── scripts/
-    ├── aur_setup.sh       # AUR helper and AUR package installation
-    ├── core_packages.sh   # Core package installation
-    ├── git_config.sh      # Git configuration
-    ├── rust_setup.sh      # Install the Rust Stable Toolchain
-    ├── steam_setup.sh     # Setup Steam for Gaming
-    ├── system_update.sh   # System update functionality
-    └── utils.sh           # Utility functions and common variables
+    ├── aur_setup.sh        # AUR helper and AUR package installation
+    ├── core_packages.sh    # Core package installation
+    ├── docker_setup.sh     # Configure Docker service for non-root users
+    ├── dotfiles.sh         # Personal configurations
+    ├── git_config.sh       # Git configuration
+    ├── node_setup.sh       # Install NVM and Node LTS
+    ├── rust_setup.sh       # Install the Rust Stable Toolchain
+    ├── shell_setup.sh      # Configure ZSH
+    ├── steam_setup.sh      # Setup Steam for Gaming
+    ├── system_update.sh    # System update functionality
+    └── utils.sh            # Utility functions and common variables
 ```
 
 ## 🔍 What Each Script Does
@@ -34,32 +38,66 @@ dotfiles/
 - Provides timing information
 - Handles errors and script validation
 
+### aur_setup.sh
+Installs and configures AUR helper (paru) and AUR packages:
+- brother-hll2315dw
+- google-chrome
+- visual-studio-code-bin
+
 ### core_packages.sh
 Installs core packages via pacman:
-- CMake (cmake)
-- DBeaver (dbeaver)
-- Discord (discord)
-- Docker (docker)
-- Docker BuildX (docker-buildx)
-- Docker Compose (docker-compose)
-- Ducker (ducker)
-- Fast Fetch (fastfetch)
-- Flameshot (flameshot)
-- Gnome Disk Utility (gnome-disk-utility)
-- Go (go)
-- Godot Game Engine (godot)
-- LazyGit (lazygit)
-- LibreOffice (libreoffice-still)
-- Neovim (neovim)
-- Obsidian (obsidian)
-- OneFetch (onefetch)
-- Rustup (rustup)
-- GNU Stow (stow)
-- Thunderbird (thunderbird)
+- cmake
+- dbeaver
+- discord
+- docker
+- docker-buildx
+- docker-compose
+- ducker
+- fastfetch
+- flameshot
+- gnome-disk-utility
+- go
+- godot
+- lazygit
+- libreoffice-still
+- neovim
+- obsidian
+- onefetch
+- rustup
+- stow
+- thunderbird
+
+### docker_setup.sh
+- Configures Docker permissions
+- Sets up Docker service
+- Adds user to Docker group
+
+### dotfiles.sh
+- Clones this repository
+- Uses GNU Stow to manage dotfiles
+- Handles backup of existing configurations
+- Currently manages:
+    - nvim
 
 ### git_config.sh
 - Sets the default git branch to master
 - Configures basic git settings
+
+### node_setup.sh
+- Installs NVM (Node Version Manager)
+- Installs latest Node.js
+- Configures Node.js environment
+
+### rust_setup.sh
+- Installs Rust stable toolchain
+- Configures Rust environment
+
+### shell_setup.sh
+- COnfigures zsh as default shell
+- Sets up PATH and environment variables
+
+### steam_setup.sh
+- Installs Steam with user intervention for driver selection
 
 ### system_update.sh
 - Updates the system packages using pacman
