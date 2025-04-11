@@ -3,6 +3,7 @@
 PACKAGES=(
     "discord"
     "flameshot"
+    "godot"
     "gnome-disk-utility"
 )
 
