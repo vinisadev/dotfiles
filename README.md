@@ -46,6 +46,7 @@ Installs and configures AUR helper (paru) and AUR packages:
 - railwayapp-cli
 - slack-desktop
 - visual-studio-code-bin
+- zoom
 
 ### core_packages.sh
 Installs core packages via pacman:
