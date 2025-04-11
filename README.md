@@ -61,6 +61,7 @@ Installs core packages via pacman:
 - gnome-disk-utility
 - go
 - godot
+- gnucash
 - lazygit
 - libreoffice-still
 - neovim
