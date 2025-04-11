@@ -35,7 +35,26 @@ dotfiles/
 
 ### core_packages.sh
 Installs core packages via pacman:
+- CMake (cmake)
+- DBeaver (dbeaver)
+- Discord (discord)
+- Docker (docker)
+- Docker BuildX (docker-buildx)
+- Docker Compose (docker-compose)
+- Ducker (ducker)
+- Fast Fetch (fastfetch)
+- Flameshot (flameshot)
 - Gnome Disk Utility (gnome-disk-utility)
+- Go (go)
+- Godot Game Engine (godot)
+- LazyGit (lazygit)
+- LibreOffice (libreoffice-still)
+- Neovim (neovim)
+- Obsidian (obsidian)
+- OneFetch (onefetch)
+- Rustup (rustup)
+- GNU Stow (stow)
+- Thunderbird (thunderbird)
 
 ### git_config.sh
 - Sets the default git branch to master
