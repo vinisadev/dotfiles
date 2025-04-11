@@ -26,7 +26,7 @@ AUR_PACKAGES=(
 )
 
 for package in "${AUR_PACKAGES[@]}"; do
-    if paru -Qi "$package" >/dev/null 2>&1; then
+    if ! paru -Qi "$package" >/dev/null 2>&1; then
         print_color "Installing $package from AUR..." "$YELLOW"
         paru -S --noconfirm "$package"
     else
