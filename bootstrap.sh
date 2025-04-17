@@ -49,7 +49,7 @@ for script in "${SCRIPTS[@]}"; do
 
         # Ensure script is executable
         if [ ! -x "$script_path" ]; then
-            chmox +x "$script_path"
+            chmod +x "$script_path"
         fi
 
         # Save current directory
