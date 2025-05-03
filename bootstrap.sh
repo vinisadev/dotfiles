@@ -6,7 +6,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPTS_DIR="$SCRIPT_DIR/scripts"
 
-# Record the start time
+# Record start time
 start_time=$(date +%s)
 
 # Source utility functions
@@ -24,6 +24,7 @@ print_color "Starting bootstrap process..." "$YELLOW"
 # Array of scripts to run in order
 SCRIPTS=(
   "system_update.sh"
+  "git_config.sh"
 )
 
 # Execute each script
@@ -65,7 +66,7 @@ for script in "${SCRIPTS[@]}"; do
   fi
 done
 
-# Record the end time
+# Record end time
 end_time=$(date +%s)
 
 # Calculate duration
