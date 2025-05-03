@@ -15,6 +15,7 @@ PACKAGES=(
   "godot"
   "lazygit"
   "libreoffice-still"
+  "neovim"
   "rustup"
 )
 
