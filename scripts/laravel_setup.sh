@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/bin/bash -c "$curl -fsSL https://php.new/install/linux/8.1)"
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.1)"
