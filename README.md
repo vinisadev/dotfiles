@@ -53,6 +53,7 @@ Installs and configures AUR helper (paru) and AUR packages:
 
 ### core_packages.sh
 Installs core packages via pacman:
+- Ansible (ansible)
 - CMake (cmake)
 - DBeaver (dbeaver)
 - Discord (discord)
