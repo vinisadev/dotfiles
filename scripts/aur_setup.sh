@@ -27,6 +27,7 @@ AUR_PACKAGES=(
   "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
+  "zoom"
 )
 
 for package in "${AUR_PACKAGES[@]}"; do

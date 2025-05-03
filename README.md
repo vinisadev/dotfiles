@@ -40,6 +40,7 @@ Installs and configures AUR helper (paru) and AUR packages:
 - railwayapp-cli
 - slack-desktop
 - visual-studio-code-bin
+- zoom
 
 ### bootstrap.sh
 - Orchestrates the execution of all other scripts
