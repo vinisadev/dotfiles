@@ -8,6 +8,7 @@ PACKAGES=(
   "docker-buildx"
   "docker-compose"
   "ducker"
+  "fastfetch"
   "flameshot"
   "gnome-disk-utility"
   "godot"
