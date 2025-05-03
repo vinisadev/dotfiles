@@ -7,6 +7,7 @@ PACKAGES=(
   "docker"
   "docker-buildx"
   "docker-compose"
+  "ducker"
   "flameshot"
   "gnome-disk-utility"
   "godot"
