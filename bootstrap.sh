@@ -33,6 +33,7 @@ SCRIPTS=(
   "docker_setup.sh"
   "aur_setup.sh"
   "shell_setup.sh"
+  "laravel_setup.sh"
 )
 
 # Execute each script

@@ -22,6 +22,7 @@ dotfiles/
   ├── docker_setup.sh       # Configure Docker service for non-root users
   ├── dotfiles.sh           # Personal configurations
   ├── git_config.sh         # Git configuration
+  ├── laravel_setup.sh      # Sets up Laravel Herd
   ├── node_setup.sh         # Install NVM and Node LTS
   ├── rust_setup.sh         # Install the Rust Stable Toolchain
   ├── shell_setup.sh        # Configure ZSH
@@ -87,6 +88,9 @@ Installs core packages via pacman:
 
 ### git_config.sh
 - Sets the default git branch to master
+
+### laravel_setup.sh"
+- Installs and configures Laravel Herd
 
 ### node_setup.sh
 - Installs NVM (Node Version Manager)
