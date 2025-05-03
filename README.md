@@ -17,6 +17,7 @@ Before running this or any bootstrap script, you should:
 dotfiles/
 ├── bootstrap.sh            # Main orchestration script
 └── scripts/
+  ├── core_packages.sh      # Core package installation
   ├── git_config.sh         # Git configuration
   ├── system_update.sh      # System update functionality
   └── utils.sh              # Utility functions and common variables
@@ -29,6 +30,10 @@ dotfiles/
 - Maintains execution order
 - Provides timing information
 - Handles errors and script validation
+
+### core_packages.sh
+Installs core packages via pacman:
+- Gnome Disk Utility (gnome-disk-utility)
 
 ### git_config.sh
 - Sets the default git branch to master
