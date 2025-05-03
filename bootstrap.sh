@@ -28,6 +28,7 @@ SCRIPTS=(
   "core_packages.sh"
   "steam_setup.sh"
   "rust_setup.sh"
+  "node_setup.sh"
   "docker_setup.sh"
   "aur_setup.sh"
 )
