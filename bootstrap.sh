@@ -27,6 +27,7 @@ SCRIPTS=(
   "git_config.sh"
   "core_packages.sh"
   "steam_setup.sh"
+  "dotfiles.sh"
   "rust_setup.sh"
   "node_setup.sh"
   "docker_setup.sh"
