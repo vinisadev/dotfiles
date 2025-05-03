@@ -23,6 +23,7 @@ fi
 AUR_PACKAGES=(
   "brother-hll2315dw"
   "google-chrome"
+  "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
 )
