@@ -19,14 +19,24 @@ dotfiles/
 └── scripts/
   ├── aur_setup.sh          # AUR helper and AUR package installation
   ├── core_packages.sh      # Core package installation
+  ├── docker_setup.sh       # Configure Docker service for non-root users
+  ├── dotfiles.sh           # Personal configurations
   ├── git_config.sh         # Git configuration
+  ├── node_setup.sh         # Install NVM and Node LTS
   ├── rust_setup.sh         # Install the Rust Stable Toolchain
+  ├── shell_setup.sh        # Configure ZSH
   ├── steam_setup.sh        # Core Setup Steam for Gaming
   ├── system_update.sh      # System update functionality
   └── utils.sh              # Utility functions and common variables
 ```
 
 ## 🔍 What Each Script Does
+
+### aur_setup.sh
+Installs and configures AUR helper (paru) and AUR packages:
+- brother-hll2315dw
+- google-chrome
+- visual-studio-code-bin
 
 ### bootstrap.sh
 - Orchestrates the execution of all other scripts
@@ -57,8 +67,36 @@ Installs core packages via pacman:
 - GNU Stow (stow)
 - Thunderbird (thunderbird)
 
+### docker_setup.sh
+- COnfigures Docker permissions
+- Sets up Docker service
+- Adds user to Docker group
+
+### dotfiles.sh
+- Clones this repository
+- Uses GNU Stow to manage dotfiles
+- Handles backup of existing configurations
+- Currently manages:
+  - nvim
+
 ### git_config.sh
 - Sets the default git branch to master
+
+### node_setup.sh
+- Installs NVM (Node Version Manager)
+- Installs latest Node.js
+- Configures Node.js environment
+
+### rust_setup.sh
+- Installs Rust stable toolchain
+- Configures Rust environment
+
+### shell_setup.sh
+- Configures zsh as default shell
+- Sets up PATH and environment variables
+
+### steam_setup.sh
+- Installs Steam with user intervention for driver selection
 
 ### system_update.sh
 - Updates the system packages using pacman
