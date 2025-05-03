@@ -20,7 +20,9 @@ else
 fi
 
 # Install AUR packages
-AUR_PACKAGES=()
+AUR_PACKAGES=(
+  "brother-hll2315dw"
+)
 
 for package in "${AUR_PACKAGES[@]}"; do
   if ! paru -Qi "$package" >/dev/null 2>&1; then
