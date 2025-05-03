@@ -26,6 +26,7 @@ SCRIPTS=(
   "system_update.sh"
   "git_config.sh"
   "core_packages.sh"
+  "aur_setup.sh"
 )
 
 # Execute each script
