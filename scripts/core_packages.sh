@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+  "ansible"
   "cmake"
   "dbeaver"
   "discord"
