@@ -20,6 +20,7 @@ dotfiles/
   ├── aur_setup.sh          # AUR helper and AUR package installation
   ├── core_packages.sh      # Core package installation
   ├── git_config.sh         # Git configuration
+  ├── rust_setup.sh         # Install the Rust Stable Toolchain
   ├── steam_setup.sh        # Core Setup Steam for Gaming
   ├── system_update.sh      # System update functionality
   └── utils.sh              # Utility functions and common variables
