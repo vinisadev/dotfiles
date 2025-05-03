@@ -2,6 +2,7 @@
 
 PACKAGES=(
   "cmake"
+  "dbeaver"
   "discord"
   "flameshot"
   "gnome-disk-utility"
