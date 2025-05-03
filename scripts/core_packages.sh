@@ -11,6 +11,7 @@ PACKAGES=(
   "fastfetch"
   "flameshot"
   "gnome-disk-utility"
+  "go"
   "godot"
   "rustup"
 )
