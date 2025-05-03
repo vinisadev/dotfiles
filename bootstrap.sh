@@ -22,7 +22,9 @@ fi
 print_color "Starting bootstrap process..." "$YELLOW"
 
 # Array of scripts to run in order
-SCRIPTS=()
+SCRIPTS=(
+  "system_update.sh"
+)
 
 # Execute each script
 for script in "${SCRIPTS[@]}"; do
