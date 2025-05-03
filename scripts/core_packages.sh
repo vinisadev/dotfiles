@@ -19,6 +19,7 @@ PACKAGES=(
   "obsidian"
   "onefetch"
   "rustup"
+  "stow"
 )
 
 for package in "${PACKAGES[@]}"; do
