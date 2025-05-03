@@ -17,6 +17,7 @@ PACKAGES=(
   "libreoffice-still"
   "neovim"
   "obsidian"
+  "onefetch"
   "rustup"
 )
 
