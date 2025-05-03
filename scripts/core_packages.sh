@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+  "cmake"
   "discord"
   "flameshot"
   "gnome-disk-utility"
