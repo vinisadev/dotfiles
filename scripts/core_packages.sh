@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+  "discord"
   "gnome-disk-utility"
 )
 
