@@ -36,6 +36,7 @@ dotfiles/
 Installs and configures AUR helper (paru) and AUR packages:
 - brother-hll2315dw
 - google-chrome
+- insomnia-bin
 - railwayapp-cli
 - slack-desktop
 - visual-studio-code-bin
