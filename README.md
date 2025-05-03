@@ -34,6 +34,7 @@ dotfiles/
 
 ### aur_setup.sh
 Installs and configures AUR helper (paru) and AUR packages:
+- appimagelauncher
 - brother-hll2315dw
 - google-chrome
 - insomnia-bin

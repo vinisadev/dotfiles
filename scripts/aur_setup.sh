@@ -21,6 +21,7 @@ fi
 
 # Install AUR packages
 AUR_PACKAGES=(
+  "appimagelauncher"
   "brother-hll2315dw"
   "google-chrome"
   "insomnia-bin"
