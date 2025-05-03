@@ -27,6 +27,7 @@ SCRIPTS=(
   "git_config.sh"
   "core_packages.sh"
   "steam_setup.sh"
+  "rust_setup.sh"
   "aur_setup.sh"
 )
 

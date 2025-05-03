@@ -5,6 +5,7 @@ PACKAGES=(
   "flameshot"
   "gnome-disk-utility"
   "godot"
+  "rustup"
 )
 
 for package in "${PACKAGES[@]}"; do
