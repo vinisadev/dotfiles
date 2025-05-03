@@ -28,6 +28,7 @@ AUR_PACKAGES=(
   "railwayapp-cli"
   "slack-desktop"
   "visual-studio-code-bin"
+  "unityhub"
   "zoom"
 )
 
